@@ -1,6 +1,5 @@
 package iox.accumulo;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -33,7 +32,7 @@ public class AccumuloAccess {
 
 	public Connector getConnection() {
 		if (conn == null) {
-			
+			log.trace("Connector was null.");
 			ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
 			try {
 				AccumuloConfig config = mapper.readValue(credsFile, AccumuloConfig.class);
@@ -46,7 +45,6 @@ public class AccumuloAccess {
 				log.error("configFile=" + credsFile);
 				log.error("", e);
 			}
-			log.debug("Connector was null.");
 		}
 		return conn;
 	}
