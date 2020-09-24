@@ -22,9 +22,9 @@ public class AccumuloAccess {
 
 	private final String zookeeperURI;
 	private final String accumuloInstance;
-	private final URL credsFile;
+	private final String credsFile;
 
-	public AccumuloAccess(final String zookeeperURI, final String accumuloInstance, final URL credsFile) {
+	public AccumuloAccess(final String zookeeperURI, final String accumuloInstance, final String credsFile) {
 		this.zookeeperURI = zookeeperURI;
 		this.accumuloInstance = accumuloInstance;
 		this.credsFile = credsFile;

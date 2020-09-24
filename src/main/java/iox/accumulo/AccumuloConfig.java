@@ -31,4 +31,10 @@ public class AccumuloConfig {
 	public AuthenticationToken getPassword() {
 		return new PasswordToken(creds.get(PASSWORD));
 	}
+
+	public String toString() {
+		StringBuilder bld = new StringBuilder();
+		creds.forEach((key, value) -> bld.append(key + ":" + value + " "));
+		return bld.toString();
+	}
 }
